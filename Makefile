@@ -27,6 +27,9 @@ deps:
 test:
 	${TEST_SCRIPT}
 
+install:
+	go install -tags "$(build_tags)" ./
+
 build:
 	docker build -t rosetta-ethereum:latest https://github.com/coinbase/rosetta-ethereum.git
 

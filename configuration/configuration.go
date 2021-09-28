@@ -82,6 +82,10 @@ const (
 	// when GethEnv is not populated.
 	DefaultGethURL = "http://localhost:8545"
 
+	GraphEnv = "GRAPHQL"
+
+	DefaultGraphURL = "http://localhost:8547"
+
 	// SkipGethAdminEnv is an optional environment variable
 	// to skip geth `admin` calls which are typically not supported
 	// by hosted node services. When not set, defaults to false.
@@ -102,6 +106,7 @@ type Configuration struct {
 	Network                *types.NetworkIdentifier
 	GenesisBlockIdentifier *types.BlockIdentifier
 	GethURL                string
+	GGraphURL              string
 	RemoteGeth             bool
 	Port                   int
 	GethArguments          string
@@ -174,6 +179,13 @@ func LoadConfiguration() (*Configuration, error) {
 	if len(envGethURL) > 0 {
 		config.RemoteGeth = true
 		config.GethURL = envGethURL
+	}
+
+	config.GGraphURL = DefaultGraphURL
+	envGraphURL := os.Getenv(GraphEnv)
+	if len(envGraphURL) > 0 {
+		config.RemoteGeth = true
+		config.GGraphURL = envGraphURL
 	}
 
 	config.SkipGethAdmin = false
