@@ -75,7 +75,7 @@ const (
 	// GethEnv is an optional environment variable
 	// used to connect rosetta-ethereum to an already
 	// running geth node.
-	GethEnv = "GETH"
+	GethEnv = "GRPC"
 
 	// DefaultGethURL is the default URL for
 	// a running geth node. This is used
