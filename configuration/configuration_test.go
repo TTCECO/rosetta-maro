@@ -32,6 +32,7 @@ func TestLoadConfiguration(t *testing.T) {
 		Network       string
 		Port          string
 		Geth          string
+		GGraph        string
 		SkipGethAdmin string
 		GethHeaders   string
 
@@ -77,6 +78,7 @@ func TestLoadConfiguration(t *testing.T) {
 			Network:       Mainnet,
 			Port:          "1000",
 			Geth:          "http://blah",
+			GGraph:        "http://blah",
 			SkipGethAdmin: "TRUE",
 			GethHeaders:   "X-Auth-Token:12345-ABCDE,X-Api-Version:2",
 			cfg: &Configuration{
@@ -207,6 +209,7 @@ func TestLoadConfiguration(t *testing.T) {
 			os.Setenv(NetworkEnv, test.Network)
 			os.Setenv(PortEnv, test.Port)
 			os.Setenv(GethEnv, test.Geth)
+			os.Setenv(GraphEnv, test.GGraph)
 			os.Setenv(SkipGethAdminEnv, test.SkipGethAdmin)
 			os.Setenv(GethHeadersEnv, test.GethHeaders)
 
