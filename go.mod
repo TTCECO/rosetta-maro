@@ -1,6 +1,6 @@
 module github.com/TTCECO/rosetta-maro
 
-replace github.com/coinbase/rosetta-ethereum => github.com/TTCECO/rosetta-maro v0.0.5-0.20210929024408-69800a0cddc3
+replace github.com/coinbase/rosetta-ethereum => ./
 
 require (
 	github.com/OneOfOne/xxhash v1.2.5 // indirect
