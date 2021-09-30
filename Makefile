@@ -61,10 +61,10 @@ run-testnet-offline:
 	docker run -d --rm -e "MODE=OFFLINE" -e "NETWORK=TESTNET" -e "PORT=8081" -p 8081:8081 rosetta-maro:latest
 
 run-mainnet-remote:
-	docker run -d --rm --ulimit "nofile=${NOFILE}:${NOFILE}" -e "MODE=ONLINE" -e "NETWORK=MAINNET" -e "PORT=8080" -e "GRPC=$(gttc)" -e "GRAPHQL=$(graphql)" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
+	docker run -d --rm --ulimit "nofile=${NOFILE}:${NOFILE}" -e "MODE=ONLINE" -e "NETWORK=MAINNET" -e "PORT=8080" -e "GRPC=$(grpc)" -e "GRAPHQL=$(graphql)" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
 
 run-testnet-remote:
-	docker run -d --rm --ulimit "nofile=${NOFILE}:${NOFILE}" -e "MODE=ONLINE" -e "NETWORK=TESTNET" -e "PORT=8080" -e "GRPC=$(gttc)" -e "GRAPHQL=$(graphql)" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
+	docker run -d --rm --ulimit "nofile=${NOFILE}:${NOFILE}" -e "MODE=ONLINE" -e "NETWORK=TESTNET" -e "PORT=8080" -e "GRPC=$(grpc)" -e "GRAPHQL=$(graphql)" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
 
 check-comments:
 	${GOLINT_INSTALL}

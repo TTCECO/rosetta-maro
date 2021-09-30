@@ -69,7 +69,7 @@ _If you cloned the repository, you can run `make run-mainnet-online`._
 ```text
 docker run -d --rm --ulimit "nofile=100000:100000" -e "MODE=ONLINE" -e "NETWORK=MAINNET" -e "PORT=8080" -e "GRPC=<NODE RPC URL>" -e "GRAPHQL=<NODE GRAPHQL URL>" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
 ```
-_If you cloned the repository, you can run `make run-mainnet-remote grpc=<NODE RPC URL> graphql=<NODE GRAPHQL URL>`._
+_If you cloned the repository, you can run `make run-mainnet-remote grpc=http://35.189.152.23:8501 graphql=http://35.189.152.23:8507`._
 
 #### Mainnet:Offline
 ```text
@@ -77,23 +77,6 @@ docker run -d --rm -e "MODE=OFFLINE" -e "NETWORK=MAINNET" -e "PORT=8081" -p 8081
 ```
 _If you cloned the repository, you can run `make run-mainnet-offline`._
 
-#### Testnet:Online
-```text
-docker run -d --rm --ulimit "nofile=100000:100000" -v "$(pwd)/maro-data:/data" -e "MODE=ONLINE" -e "NETWORK=TESTNET" -e "PORT=8080" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
-```
-_If you cloned the repository, you can run `make run-testnet-online`._
-
-#### Testnet:Online (Remote)
-```text
-docker run -d --rm --ulimit "nofile=100000:100000" -e "MODE=ONLINE" -e "NETWORK=TESTNET" -e "PORT=8080" -e "GRPC=<NODE URL>" -e "GRAPHQL=<NODE GRAPHQL URL>" -p 8080:8080 -p 30303:30303 rosetta-maro:latest
-```
-_If you cloned the repository, you can run `make run-testnet-remote grpc=<NODE RPC URL> graphql=<NODE GRAPHQL URL>`._
-
-#### Testnet:Offline
-```text
-docker run -d --rm -e "MODE=OFFLINE" -e "NETWORK=TESTNET" -e "PORT=8081" -p 8081:8081 rosetta-maro:latest
-```
-_If you cloned the repository, you can run `make run-testnet-offline`._
 
 ## System Requirements
 `rosetta-maro` has been tested on an [AWS c5.2xlarge instance](https://aws.amazon.com/ec2/instance-types/c5).
