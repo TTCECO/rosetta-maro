@@ -34,13 +34,19 @@ DOCKER [HERE](https://www.docker.com/get-started).**
 ### Install
 Running the following commands will create a Docker image called `rosetta-maro:latest`.
 
-#### From GitHub
-To download the pre-built Docker image from the latest release, run:
+#### Run Local
+After cloning this repository, run:
 ```text
-curl -sSfL https://raw.githubusercontent.com/TTCECO/rosetta-maro/master/install.sh | sh -s
+make install
+export MODE=ONLINE
+export NETWORK=MAINNET
+export PORT=8080
+export GRPC=http://35.189.152.23:8501
+export GRAPHQL=http://35.189.152.23:8507
+rosetta-maro run
 ```
 
-#### From Source
+#### Docker build From Source
 After cloning this repository, run:
 ```text
 make build-local
