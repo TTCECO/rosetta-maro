@@ -62,8 +62,8 @@ at port `8080`.
 * `MODE` (required) - Determines if Rosetta can make outbound connections. Options: `ONLINE` or `OFFLINE`.
 * `NETWORK` (required) - maro network to launch and/or communicate with. Options: `MAINNET` or `TESTNET` (which defaults to `MAINNET` for backwards compatibility).
 * `PORT`(required) - Which port to use for Rosetta.
-* `GRPC` (optional) - Point to a remote `gttc` node's RPC address(default port 8545) instead of initializing one
-* `GRAPHQL` (optional) - Point to a remote `gttc` node's GraphQL address (default port 8547) instead of initializing one
+* `GRPC` (optional) - Point to a remote `gttc` node's RPC address instead of initializing one
+* `GRAPHQL` (optional) - Point to a remote `gttc` node's GraphQL address instead of initializing one
 
 #### Mainnet:Online
 ```text
